@@ -59,6 +59,7 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
+  outline: none;
 }
 a {
   color: #1eaedb;
@@ -82,21 +83,21 @@ a {
   display: table;
   text-align: left;
   margin-top: 2.5rem;
-}
-.thead-content {
-  border-bottom: 1px solid grey;
+  border-collapse: collapse;
 }
 .pointer {
   cursor: pointer;
 }
-.table-content {
-  font-size: 0.7em;
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  color: #222;
+.table td,
+.table th {
+  border: 2px solid #ddd;
+  padding: 8px;
 }
-.table tr {
-  border: 1px solid #1eaedb;
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: white;
+  color: grey;
 }

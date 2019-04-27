@@ -21,7 +21,8 @@ class Scoreboard extends Component {
   handleAddPlayers = values => {
     this.props.addPlayers(values);
     this.setState({
-      showForm: false
+      showForm: false,
+      btnText: !this.state.btnText
     });
   };
   handleDeletePlayers = id => {
@@ -64,22 +65,20 @@ class Scoreboard extends Component {
           <AddPlayer onSubmit={this.handleAddPlayers} />
         ) : null}
         <table className="table">
-          <thead className="thead-content">
-            <tr className="table-row">
-              <td>Name</td>
-              <td>Scores</td>
-              <td>
-                <div>
-                  <button
-                    className="button-primary"
-                    onClick={this.handleSortByScores}
-                  >
-                    Sort by Score
-                  </button>
-                </div>
-              </td>
-            </tr>
-          </thead>
+          <tr>
+            <th>Name</th>
+            <th>Scores</th>
+            <th>
+              <div>
+                <button
+                  className="button-primary"
+                  onClick={this.handleSortByScores}
+                >
+                  Sort by Score
+                </button>
+              </div>
+            </th>
+          </tr>
           <tbody>{playerDetails}</tbody>
         </table>
 
