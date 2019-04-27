@@ -22,7 +22,7 @@ const renderField = ({
   <div>
     <label>{label}</label>
     <div>
-      <input {...input} placeholder={label} type={type} />
+      <input {...input} type={type} />
       {touched &&
         ((error && <span>{error}</span>) ||
           (warning && <span>{warning}</span>))}
@@ -31,7 +31,7 @@ const renderField = ({
 );
 
 const AddPlayer = props => {
-  const { handleSubmit, pristine, submitting } = props;
+  const { handleSubmit, pristine, submitting, error } = props;
   return (
     <div>
       <form onSubmit={handleSubmit} className="form-container">
@@ -45,6 +45,7 @@ const AddPlayer = props => {
               placeholder="Aditya"
             />
           </div>
+          {error && <strong>{error}</strong>}
         </div>
         <div>
           <label>Scores</label>
@@ -56,6 +57,7 @@ const AddPlayer = props => {
               placeholder="E.g: 470"
             />
           </div>
+          {error && <strong>{error}</strong>}
         </div>
         <div>
           <button

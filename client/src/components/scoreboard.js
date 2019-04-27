@@ -6,7 +6,7 @@ import {
   deletePlayers,
   sortByScores
 } from "../store/actions/playerActions";
-import { players, sortedPlayers } from "../store/reducers/index";
+import { players } from "../store/reducers/index";
 import PropTypes from "prop-types";
 import AddPlayer from "./addPlayerForm";
 import Footer from "./footer";
@@ -68,16 +68,15 @@ class Scoreboard extends Component {
           <tr>
             <th>Name</th>
             <th>Scores</th>
-            <th>
-              <div>
-                <button
-                  className="button-primary"
-                  onClick={this.handleSortByScores}
-                >
-                  Sort by Highest Scores
-                </button>
-              </div>
-            </th>
+            <th>Delete Player</th>
+            <div>
+              <button
+                className="button-primary"
+                onClick={this.handleSortByScores}
+              >
+                Sort by Highest Scores
+              </button>
+            </div>
           </tr>
           <tbody>{playerDetails}</tbody>
         </table>
@@ -92,8 +91,7 @@ Scoreboard.proptypes = {
   scores: PropTypes.number
 };
 const mapStateToProps = state => ({
-  players: players(state),
-  sortedPlayers: sortedPlayers(state)
+  players: players(state)
 });
 
 export default connect(

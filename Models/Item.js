@@ -5,11 +5,11 @@ const Schema = mongoose.Schema;
 const ItemSchema = new Schema({
   playerName: {
     type: String,
-    required: false
+    required: true
   },
   score: {
     type: Number,
-    required: false
+    required: true
   },
   date: {
     type: Date,

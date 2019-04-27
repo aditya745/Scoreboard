@@ -6,8 +6,7 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  players: [],
-  sortedPlayers: []
+  players: []
 };
 export default function(state = initialState, action) {
   console.log("back", state);
@@ -30,7 +29,7 @@ export default function(state = initialState, action) {
     case SORT_BY_SCORE:
       return {
         ...state,
-        sortedPlayers: state.players.sort((a, b) => b.score - a.score)
+        players: action.payload.sort((a, b) => b.score - a.score)
       };
     default:
       return state;
