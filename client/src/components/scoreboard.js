@@ -38,7 +38,6 @@ class Scoreboard extends Component {
     this.props.sortByScores();
   };
   render() {
-    console.log("front", this.props.sortedPlayers);
     const playerDetails = this.props.players.map((player, _id) => (
       <tr key={player._id} className="table-content">
         <th>{player.playerName}</th>
@@ -64,19 +63,17 @@ class Scoreboard extends Component {
         {this.state.showForm ? (
           <AddPlayer onSubmit={this.handleAddPlayers} />
         ) : null}
+        <br />
+        <div className="sort-btn">
+          <button className="button-primary" onClick={this.handleSortByScores}>
+            Sort by Highest Scores
+          </button>
+        </div>
         <table className="table">
           <tr>
             <th>Name</th>
             <th>Scores</th>
             <th>Delete Player</th>
-            <div className="sort-btn">
-              <button
-                className="button-primary"
-                onClick={this.handleSortByScores}
-              >
-                Sort by Highest Scores
-              </button>
-            </div>
           </tr>
           <tbody>{playerDetails}</tbody>
         </table>

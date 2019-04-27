@@ -9,7 +9,6 @@ const initialState = {
   players: []
 };
 export default function(state = initialState, action) {
-  console.log("back", state);
   switch (action.type) {
     case GET_PLAYERS:
       return {
