@@ -32,7 +32,7 @@ const renderField = ({
 );
 
 const AddPlayer = props => {
-  const { handleSubmit, pristine, submitting, error } = props;
+  const { handleSubmit, submitting, error } = props;
   return (
     <div>
       <form onSubmit={handleSubmit} className="form-container">
@@ -63,7 +63,7 @@ const AddPlayer = props => {
         <div>
           <button
             type="submit"
-            disabled={pristine || submitting}
+            disabled={submitting}
             className="button-primary"
           >
             Submit
