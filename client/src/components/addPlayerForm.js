@@ -6,10 +6,11 @@ const validate = values => {
     errors.playerName = "Required";
   }
 
-  if (isNaN(Number(values.score))) {
-    errors.age = "Must be a number";
+  if (!values.score) {
+    errors.score = "Required";
+  } else if (isNaN(Number(values.score))) {
+    errors.score = "Must be a number";
   }
-
   return errors;
 };
 
@@ -72,7 +73,6 @@ const AddPlayer = props => {
     </div>
   );
 };
-
 export default reduxForm({
   form: "addPlayer",
   validate,

@@ -69,7 +69,7 @@ class Scoreboard extends Component {
             <th>Name</th>
             <th>Scores</th>
             <th>Delete Player</th>
-            <div>
+            <div className="sort-btn">
               <button
                 className="button-primary"
                 onClick={this.handleSortByScores}

@@ -101,3 +101,7 @@ a {
   background-color: white;
   color: grey;
 }
+
+.sort-btn {
+  margin-left: 5%;
+}
