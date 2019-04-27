@@ -6,6 +6,7 @@ import {
   deletePlayers,
   sortByScores
 } from "../store/actions/playerActions";
+import { players, sortedPlayers } from "../store/reducers/index";
 import PropTypes from "prop-types";
 import AddPlayer from "./addPlayerForm";
 import Footer from "./footer";
@@ -19,6 +20,9 @@ class Scoreboard extends Component {
   }
   handleAddPlayers = values => {
     this.props.addPlayers(values);
+    this.setState({
+      showForm: false
+    });
   };
   handleDeletePlayers = id => {
     this.props.deletePlayers(id);
@@ -33,6 +37,7 @@ class Scoreboard extends Component {
     this.props.sortByScores();
   };
   render() {
+    console.log("front", this.props.sortedPlayers);
     const playerDetails = this.props.players.map((player, _id) => (
       <tr key={player._id} className="table-content">
         <th>{player.playerName}</th>
@@ -60,12 +65,15 @@ class Scoreboard extends Component {
         ) : null}
         <table className="table">
           <thead className="thead-content">
-            <tr>
+            <tr className="table-row">
               <td>Name</td>
               <td>Scores</td>
               <td>
                 <div>
-                  <button className="btn1" onClick={this.handleSortByScores}>
+                  <button
+                    className="button-primary"
+                    onClick={this.handleSortByScores}
+                  >
                     Sort by Score
                   </button>
                 </div>
@@ -85,7 +93,8 @@ Scoreboard.proptypes = {
   scores: PropTypes.number
 };
 const mapStateToProps = state => ({
-  players: state.playerReducer.players
+  players: players(state),
+  sortedPlayers: sortedPlayers(state)
 });
 
 export default connect(

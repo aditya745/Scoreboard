@@ -32,11 +32,11 @@ export const deletePlayers = id => dispatch => {
     })
   );
 };
-export const sortByScores = () => (dispatch, getPlayers) => {
-  const playersData = getPlayers().playerReducer.players;
-  const sorted_playersByScores = playersData.sort((a, b) => b.score - a.score);
-  dispatch({
-    type: SORT_BY_SCORE,
-    payload: sorted_playersByScores
-  });
+export const sortByScores = () => dispatch => {
+  axios.get("/api/items").then(res =>
+    dispatch({
+      type: SORT_BY_SCORE,
+      payload: res.data
+    })
+  );
 };

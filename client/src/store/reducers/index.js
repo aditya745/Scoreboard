@@ -5,3 +5,6 @@ export default combineReducers({
   playerReducer: playerReducer,
   form: reducerForm
 });
+
+export const players = state => state.playerReducer.players;
+export const sortedPlayers = state => state.playerReducer.sortedPlayers;

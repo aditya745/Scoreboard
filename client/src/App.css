@@ -22,7 +22,7 @@
   border-radius: 5px;
   padding: 20px 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease-out;
+  transition: all 1s ease-out;
 }
 
 input[type="text"],
@@ -65,9 +65,7 @@ a {
   text-decoration: none;
 }
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  margin-bottom: 0;
   width: 100%;
   text-align: center;
   padding-left: 20px;
@@ -98,4 +96,7 @@ a {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   color: #222;
+}
+.table tr {
+  border: 1px solid #1eaedb;
 }
