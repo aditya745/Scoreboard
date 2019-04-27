@@ -74,7 +74,7 @@ class Scoreboard extends Component {
                   className="button-primary"
                   onClick={this.handleSortByScores}
                 >
-                  Sort by Score
+                  Sort by Highest Scores
                 </button>
               </div>
             </th>
