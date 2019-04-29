@@ -8,8 +8,8 @@ import {
 } from "../store/actions/playerActions";
 import { players } from "../store/reducers/index";
 import PropTypes from "prop-types";
-import AddPlayer from "./addPlayerForm";
-import Footer from "./footer";
+import AddPlayer from "./AddPlayerForm";
+import Footer from "./Footer";
 class Scoreboard extends Component {
   state = {
     showForm: false,
